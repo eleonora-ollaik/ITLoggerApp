@@ -24,48 +24,29 @@ export default function AddTechModal () {
           <div className="input-field">
             <input
               type="text"
-              name="message"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
+              name="firstName"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
             />
-            <label htmlFor="message" className="active">
-              Log message
+            <label htmlFor="firstName" className="active">
+              First Name
             </label>
           </div>
         </div>
         <div className="row">
           <div className="input-field">
-            <select
-              name="tech"
-              value={tech}
-              className="browser-default"
-              onChange={(e) => setTech(e.target.value)}
-            >
-              <option value="" disabled>
-                Select technician
-              </option>
-              <option value="John Doe">John Doe</option>
-              <option value="Sam Smith">Sam Smith</option>
-              <option value="Sara Wilson">Sara Wilson</option>
-            </select>
+            <input
+              type="text"
+              name="lastName"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
+            <label htmlFor="lastName" className="active">
+              Last Name
+            </label>
           </div>
         </div>
-        <div className="row">
-          <div className="input-field">
-            <p>
-              <label>
-                <input
-                  type="checkbox"
-                  className="filled-in"
-                  checked={attention}
-                  value={attention}
-                  onChange={(e) => setAttention(!attention)}
-                />
-                <span>Needs Attention</span>
-              </label>
-            </p>
-          </div>
-        </div>
+
       </div>
       <div className="modal-footer">
         <a
