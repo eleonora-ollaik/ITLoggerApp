@@ -9,6 +9,8 @@ import AddLogModal from './components/logs/AddLogModal'
 import EditLogModal from './components/logs/EditLogModal'
 import AddTechModal from './components/techs/AddTechModal'
 import TechListModal from './components/techs/TechListModal'
+import {Provider} from 'react-redux'
+import store from './store'
 
 
 const App = () => {
@@ -17,18 +19,26 @@ const App = () => {
     M.AutoInit();
   })
   return (
-    <Fragment>
-      <SearchBar/>
-      <div className="container">
-        <AddBtn/>
-        <AddLogModal/>
-        <EditLogModal/>
-        <AddTechModal/>
-        <TechListModal/>
-        <Logs/>
-      </div>
-    </Fragment>
+    <Provider store={store}>
+      <Fragment>
+        <SearchBar/>
+        <div className="container">
+          <AddBtn/>
+          <AddLogModal/>
+          <EditLogModal/>
+          <AddTechModal/>
+          <TechListModal/>
+          <Logs/>
+        </div>
+      </Fragment>
+    </Provider>
   );
 }
 
 export default App;
+//npx create-react-app it-logger-app
+//npm i -D json-server concurrently
+//npm install materialize-css
+//npm i moment react-moment
+//npm run dev
+//npm i redux react-redux redux-thunk redux-devtools-extension
