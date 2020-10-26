@@ -1,40 +1,39 @@
-import React, { useEffect} from 'react';
-import {connect} from 'react-redux';
-import LogItem from './LogItem';
-import PreLoader from '../layout/PreLoader';
-import PropTypes from 'prop-types';
-import {getLogs} from '../../actions/logActions'
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import LogItem from "./LogItem";
+import PreLoader from "../layout/PreLoader";
+import PropTypes from "prop-types";
+import { getLogs } from "../../actions/logActions";
 
-const Logs = ({log: {logs, loading}, getLogs}) => {
+const Logs = ({ log: { logs, loading }, getLogs }) => {
+  useEffect(() => {
+    getLogs();
+    //eslint - disable-next-line
+  }, []);
 
-    useEffect(() => {
-        getLogs();
-        //eslint - disable-next-line
-
-    }, [])
-    
-
-    if  (loading || logs === null) {
-        return <PreLoader/>
-    }
-    return (
-        <ul className="collection with-header">
-            <li className="collection-header"> 
-                <h4 className="center"> System Logs</h4>
-            </li>
-            {!loading && logs.length === 0 ? <p className="center">No logs to show</p> : (
-                logs.map(log => <LogItem log={log} key={log.id}/>)
-            )}    
-        </ul>
-    )
-}
+  if (loading || logs === null) {
+    return <PreLoader />;
+  }
+  return (
+    <ul className="collection with-header">
+      <li className="collection-header">
+        <h4 className="center"> System Logs</h4>
+      </li>
+      {!loading && logs.length === 0 ? (
+        <p className="center">No logs to show</p>
+      ) : (
+        logs.map((log) => <LogItem log={log} key={log.id} />)
+      )}
+    </ul>
+  );
+};
 
 Logs.propTypes = {
-    log: PropTypes.object.isRequired, //ptor +tab
-    getLogs: PropTypes.func.isRequired, //ptfr
-}
-const mapStateToProps = state => ({
-    log: state.log //log from rootReducer
-})
+  log: PropTypes.object.isRequired, //ptor +tab
+  getLogs: PropTypes.func.isRequired, //ptfr
+};
+const mapStateToProps = (state) => ({
+  log: state.log, //log from rootReducer
+});
 
-export default connect(mapStateToProps, {getLogs})(Logs)
+export default connect(mapStateToProps, { getLogs })(Logs);

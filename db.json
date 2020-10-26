@@ -1,18 +1,18 @@
 {
   "logs": [
     {
-      "message": "Changed network card",
+      "id": 2,
+      "message": "Hard drive fixed",
       "attention": false,
-      "tech": "Sam Smith",
-      "date": "2020-10-24T22:28:57.499Z",
-      "id": 1
+      "tech": "John Doe",
+      "date": "2020-10-26T04:06:13.496Z"
     },
     {
-      "message": "Hard drive failed",
-      "attention": true,
-      "tech": "Sara Wilson",
-      "date": "2020-10-24T22:29:26.269Z",
-      "id": 2
+      "message": "blabla",
+      "attention": false,
+      "tech": "Sam Smith",
+      "date": "2020-10-26T04:23:25.214Z",
+      "id": 3
     }
   ],
   "techs": [
