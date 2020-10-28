@@ -1,3 +1,6 @@
+App to track tasks and issues in IT department.
+This project is built with React-Redux, Materialize and JSON-Server as a mock back-end.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
